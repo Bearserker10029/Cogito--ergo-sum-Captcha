@@ -30,22 +30,29 @@
 			<div class="captcha-container" id="textCaptcha" style="display: block">
 				<div class="header" style="font-size: 40px"><b>CAPTCHA</b></div>
 
+				<!-- Timer Display (desactivado) -->
+				<div class="timer-container" style="text-align: center; margin: 10px 0; display: none;">
+					<span class="timerText" style="font-size: 18px; font-weight: bold;">Time Left: </span>
+					<span id="timerDisplay" class="countDownTimer"
+						style="font-size: 18px; font-weight: bold; color: rgb(21, 204, 61);">01:00</span>
+				</div>
+
 				<div class="securityCode">
 					<img src="/assets/img2.jpg" class="captchabg" alt="CaptchaImage" />
-					<p id="code">Avi6479</p>
+					<p id="code">Loading...</p>
 					<div class="icons">
-						<!-- <span class="readText" id="readText">
-							<i class="fas fa-volume-up" style="font-size: 40px" onmouseover="spkvoiceover()"></i>
-						</span> -->
-						<span class="changeText" id="changeTextBtn">
-							<i class="fas fa-sync-alt" style="font-size: 40px" onmouseover="spkrefresh()"></i>
+						<span class="readText" id="readText" title="Read Captcha">
+							<i class="fas fa-volume-up" style="font-size: 40px; cursor: pointer;"></i>
+						</span>
+						<span class="changeText" id="changeTextBtn" title="Refresh Captcha">
+							<i class="fas fa-sync-alt" style="font-size: 40px; cursor: pointer;"></i>
 						</span>
 					</div>
 				</div>
 
 				<div class="userInput">
-					<input id="textbox" type="text" placeholder="Type the text here" />
-					<button class="btn" id="submitTextBtn" onmouseover="spksubmit()" type="submit">Submit</button>
+					<input id="textbox" type="text" placeholder="Type the text here" autocomplete="off" />
+					<button class="btn" id="submitTextBtn" type="submit">Submit</button>
 				</div>
 			</div>
 
@@ -60,6 +67,7 @@
 	<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/js/voice-helpers.js"></script>
 	<script src="/js/captcha-api.js"></script>
 	<script src="/js/codefont.js"></script>
 	<!-- script src="/js/script.js"></script -->

@@ -3,10 +3,15 @@ function styleCaptcha() {
     const code = document.getElementById('code');
     if (!code || !code.textContent) return;
 
+    // No aplicar estilos multicolor si es una pregunta de imagen
+    if (code.getAttribute('data-type') === 'question') {
+        return;
+    }
+
     const fonts = ['Arial', 'Verdana', 'Helvetica', 'Georgia', 'Times New Roman', 'Courier New'];
     const colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6'];
     const codeText = code.textContent.split('');
-    code.textContent = '';
+    code.innerHTML = '';
 
     codeText.forEach(letter => {
         const span = document.createElement('span');
